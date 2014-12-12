@@ -36,22 +36,24 @@
     }
 
 ?>
-<table width="800"  border="1" align="center">
-  <tr height="500">
-    <td>
+<table width="800"  border="0" align="center">
+  <tr height="100" valign="middle">
+    <td width="100" align="center" valign="middle">
       <?php
         $rDate=$_GET["date"];
         $name=$_GET["name"];
         printf("<form action=\"edit.php?name=%s&date=%s&cmd=submit\" method=\"POST\">",$name,$rDate);
-        printf("Name:%s Date:%s Password:<input name=\"pwd\" type=\"password\"></input> <input value=\"submit\" type=\"submit\"></input>",$name,$rDate);
-        printf("<textarea name=\"rData\" style=\"resize:none;width:800px;height:600px\">");
+        printf("<img src=\"images/".$name."icon.jpg\"></img>");
+        printf("</td><td>");
+        printf("Name:%s <br>Date:%s <br><br>Password:<input name=\"pwd\" type=\"password\"></input> <input value=\"submit\" type=\"submit\"></input>",$name,$rDate);
+        printf("</td><tr height=\"500\"><td colspan=2>");
+        printf("<textarea name=\"rData\" style=\"resize:none;width:800px;height:500px;background-color:#ccccff\">");
         outFile("data/".$rDate."/".$name.$rDate.".note");
-        printf("</textarea>");
+        printf("</textarea></form>");
+        printf("<a href=\"index.php\">Back</a>");
+        printf("</td></tr>");
       ?>
  
-      </form>
-    </td>
-  </tr>
 </table>
 
 </body>

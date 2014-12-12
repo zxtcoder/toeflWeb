@@ -12,22 +12,22 @@
         if(file_exists($fileName)){
             $dataArray=file($fileName);
             foreach($dataArray as $line)
-                print($line);
+                printf(nl2br(str_replace(" ","&nbsp",$line)));
         }
     }
 
 ?>
 
-<table width="1000" cellspacing="10" border="0" align="center">
-  <tr height="100" valign="middle" align="center">
-    <td width="100"><img src="images/sqicon.jpg"></img></td>
+<table style="word-break:break-all;word-wrap:break-all;table-layout:fixed;" width="1000px" cellspacing="10" border="0" align="center">
+  <tr height="100px" valign="middle" align="center">
+    <td width="100px"><img src="images/sqicon.jpg"></img></td>
     <td align="left">
     <?php
       $rDate=$_GET["date"];
-      print($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=sq&date=".$rDate."\"".">"."Edit</a>");
+      printf($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=sq&date=".$rDate."\"".">"."Edit</a>");
     ?>
     </td>
-    <td width="100"><img src="images/zxticon.jpg"></img></td>
+    <td width="100px"><img src="images/zxticon.jpg"></img></td>
 
     <td align="left">
     <?php
