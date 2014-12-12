@@ -45,18 +45,38 @@
         return($calDay);
     }
 
-    $cal=cal_month(2014,12);
-    for($i=1;$i<=6;$i++){
-        for($j=1;$j<=7;$j++){
-            print("".$cal[7*($i-1)+$j]);
-        }
-        print("<br>");
-    }
-    
-    
 ?>
+<table border="0" width="700" height="400" align="center">
+  <tr height="30" bgcolor="#55ff55"><td align="center">2014</td> <td colspan="6" align="center">December</td></tr>
+  <tr bgcolor="#ffbbff" height="30" align="center">
+    <td width="100">Mon</td> <td width="100">Tue</td> <td width="100">Wed</td>
+    <td width="100">Thu</td> <td width="100">Fri</td> <td width="100">Sat</td> <td width="100">Sun</td>
+    <?php
+      $cal=cal_month(2014,12);
+      $nowDate=date("Ymd");
+      for($i=1;$i<=6;$i++){
+          if($i!=1 && $cal[7*($i-1)+1]==0)break;
+          print("<tr align=\"center\" bgcolor=\"#ffffff\">");
+          for($j=1;$j<=7;$j++){
+              $dayNum=$cal[7*($i-1)+$j];
+              if($dayNum!=0){
+                  if($dayNum<10)$dayTmp="0".$dayNum;
+                  $tmpDate="201412".$dayTmp;
+                  if($tmpDate>$nowDate)
+                      print("<td bgcolor=\"#aabbff\">".$dayNum."</td>");
+                  else if($tmpDate==$nowDate)
+                      print("<td bgcolor=\"#ffaabb\"><a href=\"record.php\">".$dayNum."</a></td>");
+                  else 
+                      print("<td bgcolor=\"#aaaaaa\"><a href=\"record.php\">".$dayNum."</a></td>");
+              }
+              else print("<td></td>");
+          }
+          print("</tr>");
+      }
+    ?>
+  </tr>
+</table>
 
-hello,world
 </body>
 
 </html>
