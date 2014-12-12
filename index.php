@@ -60,14 +60,15 @@
           for($j=1;$j<=7;$j++){
               $dayNum=$cal[7*($i-1)+$j];
               if($dayNum!=0){
-                  if($dayNum<10)$dayTmp="0".$dayNum;
+                  if($dayNum<10) $dayTmp="0".$dayNum;
+                  else $dayTmp=$dayNum;
                   $tmpDate="201412".$dayTmp;
                   if($tmpDate>$nowDate)
                       print("<td bgcolor=\"#aabbff\">".$dayNum."</td>");
                   else if($tmpDate==$nowDate)
-                      print("<td bgcolor=\"#ffaabb\"><a href=\"record.php\">".$dayNum."</a></td>");
+                      print("<td bgcolor=\"#ff1111\"><a href=\"record.php?date=".$tmpDate."\">".$dayNum."</a></td>");
                   else 
-                      print("<td bgcolor=\"#aaaaaa\"><a href=\"record.php\">".$dayNum."</a></td>");
+                      print("<td bgcolor=\"#bbbbbb\"><a href=\"record.php?date=".$tmpDate."\">".$dayNum."</a></td>");
               }
               else print("<td></td>");
           }
