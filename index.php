@@ -66,9 +66,9 @@
                   if($tmpDate>$nowDate)
                       print("<td bgcolor=\"#aabbff\">".$dayNum."</td>");
                   else if($tmpDate==$nowDate)
-                      print("<td bgcolor=\"#ff1111\"><a href=\"record.php?date=".$tmpDate."\">".$dayNum."</a></td>");
+                      print("<td bgcolor=\"#ff1111\"><a href=\"show.php?date=".$tmpDate."\">".$dayNum."</a></td>");
                   else 
-                      print("<td bgcolor=\"#bbbbbb\"><a href=\"record.php?date=".$tmpDate."\">".$dayNum."</a></td>");
+                      print("<td bgcolor=\"#bbbbbb\"><a href=\"show.php?date=".$tmpDate."\">".$dayNum."</a></td>");
               }
               else print("<td></td>");
           }
