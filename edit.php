@@ -47,7 +47,7 @@
         printf("</td><td>");
         printf("Name:%s <br>Date:%s <br><br>Password:<input name=\"pwd\" type=\"password\"></input> <input value=\"submit\" type=\"submit\"></input>",$name,$rDate);
         printf("</td><tr height=\"500\"><td colspan=2>");
-        printf("<textarea name=\"rData\" style=\"resize:none;width:800px;height:500px;background-color:#ccccff\">");
+        printf("<textarea name=\"rData\" style=\"border-style:solid;border-color:#000000;resize:none;width:800px;height:500px;background-color:#ccccff\">");
         outFile("data/".$rDate."/".$name.$rDate.".note");
         printf("</textarea></form>");
         printf("<a href=\"index.php\">Back</a>");

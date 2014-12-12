@@ -12,13 +12,16 @@
         if(file_exists($fileName)){
             $dataArray=file($fileName);
             foreach($dataArray as $line)
-                printf(nl2br(str_replace(" ","&nbsp",$line)));
+                if(substr($line,0,4)=="<img")
+                    printf(nl2br($line));
+                else
+                    printf(nl2br(str_replace(" ","&nbsp",$line)));
         }
     }
 
 ?>
 
-<table style="word-break:break-all;word-wrap:break-all;table-layout:fixed;" width="1000px" cellspacing="10" border="0" align="center">
+<table style="word-break:break-all;word-wrap:break-all;table-layout:fixed;" width="1000px" cellspacing="1" border="0" align="center">
   <tr height="100px" valign="middle" align="center">
     <td width="100px"><img src="images/sqicon.jpg"></img></td>
     <td align="left">
@@ -38,15 +41,17 @@
   </tr>
 
   <tr height="400" align="left" valign="top">
-    <td colspan="2" bgcolor="#ffc3c3">
+    <td colspan="2" bgcolor="#ffc3c3" style="border-style:solid;border-color:#000000;border-width:1px;">
       <?php
         $rDate=$_GET["date"];
+        printf("Date: ".$rDate."<br>--------------------------------<br>");
         outFile("data/".$rDate."/sq".$rDate.".note");
       ?>
     </td>
-    <td colspan="2" bgcolor="#a5a5ff">
+    <td colspan="2" bgcolor="#a5a5ff" style="border-style:solid;border-color:#000000;border-width:1px;">
       <?php
         $rDate=$_GET["date"];
+        printf("Date: ".$rDate."<br>--------------------------------<br>");
         outFile("data/".$rDate."/zxt".$rDate.".note");
       ?>
     </td>
