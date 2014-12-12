@@ -46,10 +46,8 @@
     }
 ?>
 
-<table align="center">
-<tr><td>
-<table border="0" width="350" height="300" align="center">
-  <tr height="30" bgcolor="#55ff55"><td align="center">2014</td> <td colspan="6" align="center">December</td></tr>
+<table border="0" width="500" height="400" align="center">
+  <tr height="30" bgcolor="#ffffff"><td align="center" colspan="7"><img src="images/ml201412.jpg" style="width:300px"></img></td></tr>
   <tr bgcolor="#ffbbff" height="30" align="center">
     <td width="50">Mon</td> <td width="50">Tue</td> <td width="50">Wed</td>
     <td width="50">Thu</td> <td width="50">Fri</td> <td width="50">Sat</td> <td width="50">Sun</td>
@@ -79,11 +77,9 @@
     ?>
   </tr>
 </table>
-</td>
-
-<td>
-<table border="0" width="350" height="300" align="center">
-  <tr height="30" bgcolor="#55ff55"><td align="center">2015</td> <td colspan="6" align="center">Januar</td></tr>
+<br><br><br>
+<table border="0" width="500" height="400" align="center">
+  <tr height="30" bgcolor="#ffffff"><td align="center" colspan="7"><img src="images/ml201501.jpg" style="width:300px"></img></td></tr>
   <tr bgcolor="#ffbbff" height="30" align="center">
     <td width="50">Mon</td> <td width="50">Tue</td> <td width="50">Wed</td>
     <td width="50">Thu</td> <td width="50">Fri</td> <td width="50">Sat</td> <td width="50">Sun</td>
@@ -112,9 +108,6 @@
       }
     ?>
   </tr>
-</table>
-</td>
-</tr>
 </table>
 
 </body>
