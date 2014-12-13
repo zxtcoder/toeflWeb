@@ -21,10 +21,10 @@
 
 ?>
 
-<table style="word-break:break-all;word-wrap:break-all;table-layout:fixed;" width="1000px" cellspacing="1" border="0" align="center">
-  <tr height="100px" valign="middle" align="center">
+<table style="word-break:break-all;word-wrap:break-all;" width="1000px" cellspacing="1" border="0" align="center">
+  <tr height="100px" valign="middle" align="left">
     <td width="100px"><img src="images/sqicon.jpg"></img></td>
-    <td align="left">
+    <td align="left" width="400px">
     <?php
       $rDate=$_GET["date"];
       printf($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=sq&date=".$rDate."\"".">"."<img style=\"width:30px\"src=\"images/edit.png\"></img></a>");
@@ -33,7 +33,7 @@
     </td>
     <td width="100px"><img src="images/zxticon.jpg"></img></td>
 
-    <td align="left">
+    <td align="left" width="400px">
     <?php
       $rDate=$_GET["date"];
       printf($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=zxt&date=".$rDate."\"".">"."<img style=\"width:30px\"src=\"images/edit.png\"></img></a>");
@@ -42,7 +42,7 @@
     </td>
   </tr>
 
-  <tr height="400" align="left" valign="top">
+  <tr height="800" align="left" valign="top">
     <td colspan="2" bgcolor="#ffc3c3" style="border-style:solid;border-color:#000000;border-width:1px;">
       <?php
         $rDate=$_GET["date"];
