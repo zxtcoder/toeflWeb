@@ -8,7 +8,8 @@
   $cmd=$_GET["cmd"]; $pwd=$_POST["pwd"];
   if($cmd=="submit"){
 
-      if(($name=="sq" && $pwd=="shengqian") || ($name=="zxt" && $pwd="1qaz2wsx")){
+      //if(($name=="sq" && $pwd=="shengqian") || ($name=="zxt" && $pwd="1qaz2wsx")){
+      {
 
           $rData=$_POST["rData"];
           if(!file_exists("data/".$rDate))mkdir("data/".$rDate);
@@ -31,7 +32,7 @@
         if(file_exists($fileName)){
             $dataArray=file($fileName);
             foreach($dataArray as $line)
-                print($line);
+                printf($line);
         }
     }
 
