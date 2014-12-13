@@ -27,16 +27,18 @@
     <td align="left">
     <?php
       $rDate=$_GET["date"];
-      printf($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=sq&date=".$rDate."\"".">"."Edit</a>");
+      printf($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=sq&date=".$rDate."\"".">"."<img style=\"width:30px\"src=\"images/edit.png\"></img></a>");
     ?>
+    <a href="cal.php"><img style="width:30px" src="images/back.png"></img></a>
     </td>
     <td width="100px"><img src="images/zxticon.jpg"></img></td>
 
     <td align="left">
     <?php
       $rDate=$_GET["date"];
-      print($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=zxt&date=".$rDate."\"".">"."Edit</a>");
+      printf($rDate."<br><br>"." <a href=\"edit.php?cmd=show&name=zxt&date=".$rDate."\"".">"."<img style=\"width:30px\"src=\"images/edit.png\"></img></a>");
     ?>
+    <a href="cal.php"><img style="width:30px" src="images/back.png"></img></a>
     </td>
   </tr>
 
@@ -57,7 +59,6 @@
     </td>
   </tr>
   <tr>
-    <td colspan="4"><a href="index.php">Back</a></td>
   </tr>
 
 </table>
