@@ -12,6 +12,8 @@
       {
 
           $rData=$_POST["rData"];
+          $cha=mb_detect_encoding($rData);
+          $rData=mb_convert_encoding($rData,"utf-8",$cha);
           if(!file_exists("data/".$rDate))mkdir("data/".$rDate);
           $fp=fopen("data/".$rDate."/".$name.$rDate.".note","w");
           fwrite($fp,$rData);

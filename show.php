@@ -11,11 +11,15 @@
     function outFile($fileName){
         if(file_exists($fileName)){
             $dataArray=file($fileName);
-            foreach($dataArray as $line)
-                if(substr($line,0,4)=="<img")
-                    printf(nl2br($line));
+            foreach($dataArray as $line){
+                $tmpLine=$line;
+                $cha=mb_detect_encoding($line);
+                $tmpLine=mb_convert_encoding($tmpLine,"utf-8",$cha);
+                if(substr($tmpLine,0,4)=="<img")
+                    printf($tmpLine);
                 else
-                    printf(nl2br(str_replace(" ","&nbsp",$line)));
+                    printf(nl2br(str_replace(" ","&nbsp",$tmpLine)));
+            }
         }
     }
 
