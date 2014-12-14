@@ -1,0 +1,30 @@
+#upFile{
+  position:absolute;
+  top:30%;
+  left:30%;
+  width:510px;
+  height:320px;
+  border:2px solid #000000;
+  background-color:#cccccc;
+}
+
+#ifUpload{
+  position:absolute;
+  width:500px;
+  height:270px;
+  border:0px solid #000000;
+  background-color:#cccccc;
+}
+
+
+#explorer{
+  position:absolute;
+  top:30%;
+  left:30%;
+  width:510px;
+  height:320px;
+  border:2px solid #000000;
+  background-color:#cccccc;
+}
+
+

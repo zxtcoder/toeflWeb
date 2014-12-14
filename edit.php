@@ -1,6 +1,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
 <title>Fight for TOEFL!!!</title>
 
 <?php
@@ -24,9 +27,62 @@
     
 ?>
 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+
+  function docReady(){
+    hideUP();
+    hideExp();
+  }
+
+  function hideUP(){
+    $("#upFile").hide();
+  }
+
+  function showUP(){
+    $("#upFile").show();
+  }
+
+  function hideExp(){
+    $("#explorer").hide();
+  }
+
+  function showExp(){
+    $("#explorer").show();
+  }
+
+  $(document).ready(docReady);
+
+</script>
+
 </head>
 
 <body>
+
+<div id="upFile">
+  <table  cellspacing="0" width="510px" border="0">
+    <tr bgcolor="#1111ff" style="color:#ffffff"><td> Upload File</td>
+      <td width="32px"><img width="32px" src="images/close.png" onclick="hideUP()"/></td>
+    </tr>
+    <tr bgcolor="#cccccc"><td colspan="2">
+      <?php
+        printf("<iframe id=\"ifUpload\" src=\"upload.php?date=%s&name=%s\"></iframe>",$_GET["date"],$_GET["name"]);
+      ?>
+    </td></tr>
+  </table>
+</div>
+
+<div id="explorer">
+  <table  cellspacing="0" width="510px" border="0">
+    <tr bgcolor="#1111ff" style="color:#ffffff"><td> Explorer</td>
+      <td width="32px"><img width="32px" src="images/close.png" onclick="hideExp()"/></td>
+    </tr>
+    <tr bgcolor="#cccccc"><td colspan="2">
+      <?php
+      ?>
+    </td></tr>
+  </table>
+</div>
 
 <?php
 
@@ -52,7 +108,9 @@
         printf("</td>");
         printf("<tr>");
         printf("<td>");
-        printf("<a href=\"cal.php\"><img style=\"width:30px\" src=\"images/back.png\"></img></a>");
+        printf("<a href=\"cal.php\"><img style=\"width:30px\" src=\"images/back.png\"></img></a>&nbsp;&nbsp;&nbsp;");
+        printf("<a href=\"javascript:showUP()\"><img style=\"width:30px\" src=\"images/upload.png\"></img></a>&nbsp;&nbsp;");
+        printf("<a href=\"javascript:showExp()\"><img style=\"width:30px\" src=\"images/explorer.png\"></img></a>");
         printf("</td>");
         printf("</tr>");
         printf("<tr height=\"500\"><td colspan=2>");
