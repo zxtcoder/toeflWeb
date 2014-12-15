@@ -8,6 +8,7 @@
    <input type="file" id="file4" name="file4" value="" /><br /><br />
    <input type="file" id="file5" name="file5" value="" /><br /><br />
    <input type="submit" id="submit" name="submit" value="upload" />
+   <input type="hidden" id="ifup" name="ifup" value="true" />
    <?php
      printf("<input id=\"date\" name=\"date\" type=\"hidden\" value=\"".$_GET["date"]."\" />");
      printf("<input id=\"name\" name=\"name\" type=\"hidden\" value=\"".$_GET["name"]."\" />");
@@ -17,26 +18,30 @@
 <?php
   $name=$_POST["name"];
   $date=$_POST["date"];
+  $flag=$_POST["ifup"];
+  if($flag=="true"){
 
-  $desPath="data/".$date."/";
-  if(is_uploaded_file($_FILES["file1"]["tmp_name"])){
-      $result=move_uploaded_file($_FILES["file1"]["tmp_name"],$desPath.$_FILES["file1"]["name"]);
-  }
-
-  if(is_uploaded_file($_FILES["file2"]["tmp_name"])){
-      $result=move_uploaded_file($_FILES["file2"]["tmp_name"],$desPath.$_FILES["file2"]["name"]);
-  }
-
-  if(is_uploaded_file($_FILES["file3"]["tmp_name"])){
-      $result=move_uploaded_file($_FILES["file3"]["tmp_name"],$desPath.$_FILES["file3"]["name"]);
-  }
-
-  if(is_uploaded_file($_FILES["file4"]["tmp_name"])){
-      $result=move_uploaded_file($_FILES["file4"]["tmp_name"],$desPath.$_FILES["file4"]["name"]);
-  }
-
-  if(is_uploaded_file($_FILES["file5"]["tmp_name"])){
-      $result=move_uploaded_file($_FILES["file5"]["tmp_name"],$desPath.$_FILES["file5"]["name"]);
+      $desPath="data/".$date."/".$name."Files/";
+      mkdir($desPath);
+      if(is_uploaded_file($_FILES["file1"]["tmp_name"])){
+          $result=move_uploaded_file($_FILES["file1"]["tmp_name"],$desPath.$_FILES["file1"]["name"]);
+      }
+    
+      if(is_uploaded_file($_FILES["file2"]["tmp_name"])){
+          $result=move_uploaded_file($_FILES["file2"]["tmp_name"],$desPath.$_FILES["file2"]["name"]);
+      }
+    
+      if(is_uploaded_file($_FILES["file3"]["tmp_name"])){
+          $result=move_uploaded_file($_FILES["file3"]["tmp_name"],$desPath.$_FILES["file3"]["name"]);
+      }
+    
+      if(is_uploaded_file($_FILES["file4"]["tmp_name"])){
+          $result=move_uploaded_file($_FILES["file4"]["tmp_name"],$desPath.$_FILES["file4"]["name"]);
+      }
+    
+      if(is_uploaded_file($_FILES["file5"]["tmp_name"])){
+          $result=move_uploaded_file($_FILES["file5"]["tmp_name"],$desPath.$_FILES["file5"]["name"]);
+      }
   }
 ?>
 
