@@ -93,7 +93,7 @@
         printf("<tr valign=top>");
         printf("<td colspan=2>");
         printf("<img width=50px src=\"images/".$name."icon.jpg\"></img>&nbsp;&nbsp;&nbsp;");
-        printf("<a href=\"cal.php\"><img style=\"width:30px\" src=\"images/back.png\"></img></a>&nbsp;&nbsp;&nbsp;");
+        printf("<a href=\"show.php?date=%s\"><img style=\"width:30px\" src=\"images/back.png\"></img></a>&nbsp;&nbsp;&nbsp;",$rDate);
         printf("<a href=\"javascript:showUP()\"><img style=\"width:30px\" src=\"images/upload.png\"></img></a>&nbsp;&nbsp;");
         printf("<a href=\"javascript:showFL()\"><img style=\"width:30px\" src=\"images/explorer.png\"></img></a>&nbsp;&nbsp;");
         printf("<a href=\"javascript:saveSubmit()\"><img style=\"width:30px\" src=\"images/save.png\"></img></a>");
