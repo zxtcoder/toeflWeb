@@ -1,7 +1,7 @@
 <html>
 <head></head>
 <body bgcolor="#cccccc">
- <form method="post" enctype="multipart/form-data" action="upload.php">
+ <form method="POST" enctype="multipart/form-data" action="upload.php">
    <input type="file" id="file1" name="file1" value="" /><br /><br />
    <input type="file" id="file2" name="file2" value="" /><br /><br />
    <input type="file" id="file3" name="file3" value="" /><br /><br />
@@ -22,6 +22,7 @@
   if($flag=="true"){
 
       $desPath="data/".$date."/".$name."Files/";
+      mkdir("data/".$date);
       mkdir($desPath);
       if(is_uploaded_file($_FILES["file1"]["tmp_name"])){
           $result=move_uploaded_file($_FILES["file1"]["tmp_name"],$desPath.$_FILES["file1"]["name"]);

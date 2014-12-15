@@ -24,7 +24,7 @@
           fwrite($fp,$rData);
           fclose($fp);
       }
-      header("Location: show.php?date=".$rDate);
+//      header("Location: show.php?date=".$rDate);
   }
     
 ?>
@@ -54,6 +54,11 @@
     $("#upFile").hide();
   }
 
+  function saveSubmit(){
+    $("#txtSave").submit();
+  }
+
+
   function showUP(){
     $("#upFile").show();
     hideFL();
@@ -81,25 +86,24 @@
 
 <body>
 
-<table width="500"  border="0" align="left">
-  <tr height="100" valign="top">
-    <td width="100" align="left" valign="top">
+<table width="500px"  border="0" align="center">
       <?php
         $rDate=$_GET["date"];
         $name=$_GET["name"];
-        printf("<form action=\"edit.php?name=%s&date=%s&cmd=submit\" method=\"POST\">",$name,$rDate);
-        printf("<img src=\"images/".$name."icon.jpg\"></img>");
-        printf("</td><td colspan=2 align=\"left\">");
-        printf("Name:%s <br>Date:%s <br><br>Password:<input name=\"pwd\" type=\"password\"></input> <input value=\"submit\" type=\"submit\"></input>",$name,$rDate);
-        printf("</td>");
         printf("<tr valign=top>");
-        printf("<td colspan=3>");
+        printf("<td colspan=2>");
+        printf("<img width=50px src=\"images/".$name."icon.jpg\"></img>&nbsp;&nbsp;&nbsp;");
         printf("<a href=\"cal.php\"><img style=\"width:30px\" src=\"images/back.png\"></img></a>&nbsp;&nbsp;&nbsp;");
         printf("<a href=\"javascript:showUP()\"><img style=\"width:30px\" src=\"images/upload.png\"></img></a>&nbsp;&nbsp;");
-        printf("<a href=\"javascript:showFL()\"><img style=\"width:30px\" src=\"images/explorer.png\"></img></a>");
+        printf("<a href=\"javascript:showFL()\"><img style=\"width:30px\" src=\"images/explorer.png\"></img></a>&nbsp;&nbsp;");
+        printf("<a href=\"javascript:saveSubmit()\"><img style=\"width:30px\" src=\"images/save.png\"></img></a>");
         printf("</td>");
         printf("</tr>");
-        printf("<tr height=\"500\" valign=\"top\"><td colspan=2>");
+        printf("<tr><td colspan=2>");
+        printf("%s&nbsp;&nbsp;%s",$name,$rDate);
+        printf("</td></tr>");
+        printf("<tr height=\"500\" valign=\"top\"><td>");
+        printf("<form id=\"txtSave\" action=\"edit.php?name=%s&date=%s&cmd=submit\" method=\"POST\">",$name,$rDate);
         printf("<textarea id=\"rData\" name=\"rData\" style=\"border-style:solid;border-color:#000000;resize:none;width:500px;height:500px;background-color:#ccccff\">");
         outFile("data/".$rDate."/".$name.$rDate.".note");
         printf("</textarea></form></td>");

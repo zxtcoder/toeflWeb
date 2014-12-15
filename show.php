@@ -25,9 +25,9 @@
 
 ?>
 
-<table style="word-break:break-all;word-wrap:break-all;" width="1000px" cellspacing="1" border="0" align="center">
-  <tr height="100px" valign="middle" align="left">
-    <td width="100px"><img src="images/sqicon.jpg"></img></td>
+<table style="word-break:break-all;word-wrap:break-all;" width="100%" cellspacing="1" border="0" align="center">
+  <tr height="50px" valign="middle" align="left">
+    <td width="50px"><img width=50px src="images/sqicon.jpg"></img></td>
     <td align="left" width="400px">
     <?php
       $rDate=$_GET["date"];
@@ -35,7 +35,7 @@
     ?>
     <a href="cal.php"><img style="width:30px" src="images/back.png"></img></a>
     </td>
-    <td width="100px"><img src="images/zxticon.jpg"></img></td>
+    <td width="50px"><img width=50px src="images/zxticon.jpg"></img></td>
 
     <td align="left" width="400px">
     <?php
