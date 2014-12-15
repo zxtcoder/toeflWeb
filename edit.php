@@ -81,19 +81,6 @@
 
 <body>
 
-<div id="upFile">
-  <table  cellspacing="0" width="510px" border="0">
-    <tr bgcolor="#5555ff" style="color:#ffffff"><td> Upload File</td>
-      <td width="24px"><img width="24px" src="images/close.png" onclick="hideUP()"/></td>
-    </tr>
-    <tr bgcolor="#cccccc"><td colspan="2">
-      <?php
-        printf("<iframe id=\"ifUpload\" src=\"upload.php?date=%s&name=%s\"></iframe>",$_GET["date"],$_GET["name"]);
-      ?>
-    </td></tr>
-  </table>
-</div>
-
 <table width="500"  border="0" align="left">
   <tr height="100" valign="top">
     <td width="100" align="left" valign="top">
@@ -144,9 +131,22 @@
         closedir($dh);
         printf("</td></tr></table>");
         printf("</div>");
-
-        printf("</td></tr>");
       ?>
+      <div id="upFile">
+        <table  cellspacing="0" width="510px" border="0">
+          <tr bgcolor="#5555ff" style="color:#ffffff"><td> Upload File</td>
+            <td width="24px"><img width="24px" src="images/close.png" onclick="hideUP()"/></td>
+          </tr>
+          <tr bgcolor="#cccccc"><td colspan="2">
+            <?php
+              printf("<iframe id=\"ifUpload\" src=\"upload.php?date=%s&name=%s\"></iframe>",$_GET["date"],$_GET["name"]);
+            ?>
+          </td></tr>
+        </table>
+      </div>
+      
+
+      </td></tr>
  
 </table>
 

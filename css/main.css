@@ -1,7 +1,7 @@
 #upFile{
-  position:absolute;
-  top:30%;
-  left:30%;
+  position:relative;
+  top:0%;
+  left:0%;
   width:510px;
   height:320px;
   border:2px solid #000000;
@@ -14,17 +14,6 @@
   width:500px;
   height:270px;
   border:0px solid #000000;
-  background-color:#cccccc;
-}
-
-
-#explorer{
-  position:absolute;
-  top:10%;
-  left:10%;
-  width:510px;
-  height:500px;
-  border:2px solid #000000;
   background-color:#cccccc;
 }
 
