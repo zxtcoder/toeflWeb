@@ -47,7 +47,7 @@
 
   function docReady(){
     hideUP();
-    hideExp();
+    hideFL();
   }
 
   function hideUP(){
@@ -56,17 +56,20 @@
 
   function showUP(){
     $("#upFile").show();
+    hideFL();
   }
 
-  function hideExp(){
-    $("#explorer").hide();
+  function hideFL(){
+    $("#fileList").hide();
   }
 
-  function showExp(){
-    $("#explorer").show();
+  function showFL(){
+    $("#fileList").show();
+    hideUP();
   }
 
-  function insertText(){
+  function insertText(txt){
+    $("#rData").text(txt);
     
   }
 
@@ -80,8 +83,8 @@
 
 <div id="upFile">
   <table  cellspacing="0" width="510px" border="0">
-    <tr bgcolor="#1111ff" style="color:#ffffff"><td> Upload File</td>
-      <td width="32px"><img width="32px" src="images/close.png" onclick="hideUP()"/></td>
+    <tr bgcolor="#5555ff" style="color:#ffffff"><td> Upload File</td>
+      <td width="24px"><img width="24px" src="images/close.png" onclick="hideUP()"/></td>
     </tr>
     <tr bgcolor="#cccccc"><td colspan="2">
       <?php
@@ -106,14 +109,20 @@
         printf("<td colspan=3>");
         printf("<a href=\"cal.php\"><img style=\"width:30px\" src=\"images/back.png\"></img></a>&nbsp;&nbsp;&nbsp;");
         printf("<a href=\"javascript:showUP()\"><img style=\"width:30px\" src=\"images/upload.png\"></img></a>&nbsp;&nbsp;");
-        printf("<a href=\"javascript:showExp()\"><img style=\"width:30px\" src=\"images/explorer.png\"></img></a>");
+        printf("<a href=\"javascript:showFL()\"><img style=\"width:30px\" src=\"images/explorer.png\"></img></a>");
         printf("</td>");
         printf("</tr>");
         printf("<tr height=\"500\" valign=\"top\"><td colspan=2>");
-        printf("<textarea name=\"rData\" style=\"border-style:solid;border-color:#000000;resize:none;width:500px;height:500px;background-color:#ccccff\">");
+        printf("<textarea id=\"rData\" name=\"rData\" style=\"border-style:solid;border-color:#000000;resize:none;width:500px;height:500px;background-color:#ccccff\">");
         outFile("data/".$rDate."/".$name.$rDate.".note");
         printf("</textarea></form></td>");
-        printf("<td width=300 valign=\"top\" bgcolor=\"#ffffff\">File List<br />");
+        printf("<td width=300 valign=\"top\" bgcolor=\"#ffffff\">");
+
+        printf("<div id=\"fileList\">");
+        printf("<table cellspacing=0><tr style=\"color:#ffffff\" bgcolor=\"#5555ff\"><td>File List</td>");
+        printf("<td  width=24px><img width=24px src=\"images/close.png\" onclick=\"hideFL()\" /></td>");
+        printf("</tr>");
+        printf("<tr><td>");
         $date=$_GET["date"];
         $name=$_GET["name"];
         $path="data/".$date."/".$name."Files/";
@@ -122,13 +131,19 @@
             $fname=$file;
             $exName=strtolower(substr(strrchr($fname,"."),1));
             if($exName=="jpg" || $exName=="png" || $exName=="gif" || $exName=="bmp"){
-                printf("<img width=\"50px\" src=\"%s\" onclick=\"insertText(%s)\" /><br />%s<br /><br />", $path.$fname, $path.$fname,$fname);
+                $imgTxt="&lt;img src=".$path.$fname." /&gt;";
+                printf("<img width=\"50px\" src=\"%s\" /><br />", $path.$fname);
+                printf("<input style=\"width:500px\" type=text value='%s' /><br /><br />", $imgTxt);
             }
             else if($fname!="." && $fname!=".."){
-                printf("<a href=\"javascript:insertText(%s)\">%s</a><br /><br />", $path.$fname,$fname);
+                $docTxt="&lt;a href=".$path.$fname."&gt;".$fname."&lt;/a&gt;";
+                printf("%s<br />", $fname);
+                printf("<input style=\"width:500px\" type=text value='%s' /><br /><br />", $docTxt);
             }
         }
         closedir($dh);
+        printf("</td></tr></table>");
+        printf("</div>");
 
         printf("</td></tr>");
       ?>

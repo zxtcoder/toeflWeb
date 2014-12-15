@@ -15,7 +15,7 @@
                 $tmpLine=$line;
                 $cha=mb_detect_encoding($line);
                 $tmpLine=mb_convert_encoding($tmpLine,"utf-8",$cha);
-                if(substr($tmpLine,0,4)=="<img")
+                if(substr($tmpLine,0,4)=="<img" || substr($tmpLine,0,2)=="<a")
                     printf($tmpLine);
                 else
                     printf(nl2br(str_replace(" ","&nbsp",$tmpLine)));
